@@ -12,13 +12,12 @@
         }
 
         .footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 10px 20px;
-    background-color: rgba(0, 0, 0, 0.85); /* 85% transparent black */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: rgba(0, 0, 0, 0.85); /* 85% transparent black */
         }
-
 
         .footer-img {
             width: 40px;
@@ -58,7 +57,7 @@
 
         .glow {
             font-size: 48px;
-            color: transparent;
+            color: white;
             text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             animation: glow 1s infinite alternate;
         }
@@ -68,20 +67,23 @@
                 text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
             }
             to {
-                text-shadow: 0 0 20px rgba(255, 255, 255, 1);
+                text-shadow: 0 0 20px rgba(255, 255, 255, 1),
+                             0 0 30px rgba(255, 255, 255, 0.8),
+                             0 0 40px rgba(255, 255, 255, 0.6),
+                             0 0 50px rgba(255, 255, 255, 0.4);
             }
         }
     </style>
 </head>
 <body>
     <div class="footer">
-        <img src="https://your-image-url.jpg" alt="40x40 Image" class="footer-img">
+        <img src="/imgs/brunysixlgif.gif" alt="40x40 Image" class="footer-img">
         <div class="footer-links">
-            <h3 class="footer-link" onclick="window.location.href='page1.html'">Link 1</h3>
-            <h3 class="footer-link" onclick="window.location.href='page2.html'">Link 2</h3>
-            <h3 class="footer-link" onclick="window.location.href='page3.html'">Link 3</h3>
-            <h3 class="footer-link" onclick="window.location.href='page4.html'">Link 4</h3>
-            <h3 class="footer-link" onclick="window.location.href='page5.html'">Link 5</h3>
+            <h3 class="footer-link" onclick="window.location.href='page1.html'">Arcade</h3>
+            <h3 class="footer-link" onclick="window.location.href='page2.html'">Proxys</h3>
+            <h3 class="footer-link" onclick="window.location.href='page3.html'">Emulators</h3>
+            <h3 class="footer-link" onclick="window.location.href='page4.html'">Bookmarks</h3>
+            <h3 class="footer-link" onclick="window.location.href='page5.html'">More</h3>
         </div>
     </div>
     <canvas id="particleCanvas"></canvas>
