@@ -73,6 +73,29 @@
                              0 0 50px rgba(255, 255, 255, 0.4);
             }
         }
+
+        .minecraft-button {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            border: 2px solid white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .minecraft-button:hover {
+            background-color: white;
+            color: black;
+            transform: translateY(-3px); /* Move button up by 3 pixels */
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add shadow */
+        }
+
     </style>
 </head>
 <body>
@@ -88,7 +111,45 @@
     </div>
     <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">Glowing Text</h1>
+        <h1 class="glow">brunysixl.</h1>
+        <button class="minecraft-button">Open About:Blank Tab</button>
+        <script>
+      var urlObj = new window.URL(window.location.href);
+        var url = window.location;
+        
+        if (url) {
+            var win;
+        
+            document.querySelector('button').onclick = function() {
+                if (win) {
+                    win.focus();
+                } else {
+                    win = window.open();
+                    win.document.body.style.margin = '0';
+                    win.document.body.style.height = '100vh';
+                    var iframe = win.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    win.document.body.appendChild(iframe);
+                    window.location.replace("https://ixl.com");
+        
+                    var interval = setInterval(function() {
+                        if (win.closed) {
+                            clearInterval(interval);
+                            win = undefined;
+        
+                        }
+                    }, 500);
+        
+        
+                }
+            };
+        }
+        </script>
+
     </div>
 
     <script>
