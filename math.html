@@ -98,7 +98,7 @@
             }
         }
 
-        .minecraft-button {
+        button {
             display: inline-block;
             padding: 10px 20px;
             font-size: 16px;
@@ -113,7 +113,7 @@
             transition: background-color 0.3s, color 0.3s, transform 0.2s, box-shadow 0.2s;
         }
 
-        .minecraft-button:hover {
+        button:hover {
             background-color: white;
             color: black;
             transform: translateY(-3px); 
@@ -150,45 +150,8 @@
     </div>
     <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">brunysixl.</h1>
-        <h5>Motd: i plead guilty as a culpoate if cancer\ -pxlarized</h5>
-        <button class="minecraft-button">Open About:Blank Tab</button>
-        <script>
-      var urlObj = new window.URL(window.location.href);
-        var url = window.location;
+        <h1 class="glow">brunysixl. | Arcade</h1>
         
-        if (url) {
-            var win;
-        
-            document.querySelector('button').onclick = function() {
-                if (win) {
-                    win.focus();
-                } else {
-                    win = window.open();
-                    win.document.body.style.margin = '0';
-                    win.document.body.style.height = '100vh';
-                    var iframe = win.document.createElement('iframe');
-                    iframe.style.border = 'none';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.margin = '0';
-                    iframe.src = url;
-                    win.document.body.appendChild(iframe);
-                    window.location.replace("https://ixl.com");
-        
-                    var interval = setInterval(function() {
-                        if (win.closed) {
-                            clearInterval(interval);
-                            win = undefined;
-        
-                        }
-                    }, 500);
-        
-        
-                }
-            };
-        }
-        </script>
 <hr>
         
 <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
