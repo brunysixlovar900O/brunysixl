@@ -1,10 +1,13 @@
+<html lang="en"><head><link rel="icon" type="image/png" href="/imgs/brunysixlfavicon.png">
+<title id="dynamic-title">IXL | Lessons</title>  
+
 <!DOCTYPE html>
 <html>
 <head>
     <style>
         body {
             margin: 0;
-            overflow: auto; /* Enable scrolling */
+            overflow: auto;
             background-color: black;
             position: relative;
             font-family: Arial, sans-serif;
@@ -16,7 +19,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.95); /* 95% transparent black */
+            background-color: rgba(0, 0, 0, 0.95); 
         }
 
         .footer-img {
@@ -25,14 +28,14 @@
         }
 
         .footer-links {
-            display: flex; /* Display links horizontally */
+            display: flex; 
         }
 
         .footer-link {
             cursor: pointer;
             transition: transform 0.3s;
             color: white;
-            margin-right: 10px; /* Add spacing between links */
+            margin-right: 10px; 
         }
 
         .footer-link:hover {
@@ -51,8 +54,8 @@
         .content {
             text-align: center;
             padding: 50px 0;
-            position: relative; /* Ensure the text is positioned correctly */
-            z-index: 1; /* Bring text in front of particles */
+            position: relative; 
+            z-index: 1; 
         }
 
         .glow {
@@ -92,8 +95,8 @@
         .minecraft-button:hover {
             background-color: white;
             color: black;
-            transform: translateY(-3px); /* Move button up by 3 pixels */
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Add shadow */
+            transform: translateY(-3px); 
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); 
         }
 
     </style>
@@ -180,7 +183,7 @@
             ctx.fillStyle = 'white';
             particles.forEach(particle => {
                 ctx.beginPath();
-                ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2); // Increase particle size to 2
+                ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2); 
                 ctx.fill();
             });
         }
@@ -191,10 +194,10 @@
                 particle.x += particle.speedX;
                 particle.y += particle.speedY;
                 if (particle.x < 0 || particle.x > canvas.width) {
-                    particle.speedX *= -1; // Reverse direction if hitting the sides
+                    particle.speedX *= -1; 
                 }
                 if (particle.y < 0 || particle.y > canvas.height) {
-                    particle.speedY *= -1; // Reverse direction if hitting the top/bottom
+                    particle.speedY *= -1; 
                 }
             });
         }
