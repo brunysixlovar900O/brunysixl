@@ -24,6 +24,10 @@
             height: 40px;
         }
 
+        .footer-links {
+            display: flex; /* Display links horizontally */
+        }
+
         .footer-link {
             cursor: pointer;
             transition: transform 0.3s;
@@ -47,6 +51,8 @@
         .content {
             text-align: center;
             padding: 50px 0;
+            position: relative; /* Ensure the text is positioned correctly */
+            z-index: 1; /* Bring text in front of particles */
         }
 
         .glow {
@@ -69,7 +75,7 @@
 <body>
     <div class="footer">
         <img src="https://your-image-url.jpg" alt="40x40 Image" class="footer-img">
-        <div>
+        <div class="footer-links">
             <h3 class="footer-link" onclick="window.location.href='page1.html'">Link 1</h3>
             <h3 class="footer-link" onclick="window.location.href='page2.html'">Link 2</h3>
             <h3 class="footer-link" onclick="window.location.href='page3.html'">Link 3</h3>
@@ -79,7 +85,7 @@
     </div>
     <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">brunysixl.</h1>
+        <h1 class="glow">Glowing Text</h1>
     </div>
 
     <script>
@@ -98,7 +104,9 @@
         for (let i = 0; i < numParticles; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
-            particles.push({ x, y });
+            const speedX = Math.random() - 0.5; // Random speed between -0.5 and 0.5
+            const speedY = Math.random() - 0.5;
+            particles.push({ x, y, speedX, speedY });
         }
 
         // Draw particles
@@ -112,30 +120,24 @@
             });
         }
 
-        // Connect particles
-        function connectParticles() {
-            ctx.strokeStyle = 'white';
+        // Move particles
+        function moveParticles() {
             particles.forEach(particle => {
-                particles.forEach(otherParticle => {
-                    if (particle !== otherParticle) {
-                        const dx = particle.x - otherParticle.x;
-                        const dy = particle.y - otherParticle.y;
-                        const distance = Math.sqrt(dx * dx + dy * dy);
-                        if (distance < 30) {
-                            ctx.beginPath();
-                            ctx.moveTo(particle.x, particle.y);
-                            ctx.lineTo(otherParticle.x, otherParticle.y);
-                            ctx.stroke();
-                        }
-                    }
-                });
+                particle.x += particle.speedX;
+                particle.y += particle.speedY;
+                if (particle.x < 0 || particle.x > canvas.width) {
+                    particle.speedX *= -1; // Reverse direction if hitting the sides
+                }
+                if (particle.y < 0 || particle.y > canvas.height) {
+                    particle.speedY *= -1; // Reverse direction if hitting the top/bottom
+                }
             });
         }
 
         // Animation loop
         function animate() {
             drawParticles();
-            connectParticles();
+            moveParticles();
             requestAnimationFrame(animate);
         }
 
