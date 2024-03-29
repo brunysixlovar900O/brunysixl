@@ -120,6 +120,13 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); 
         }
 
+
+        hr {
+            border: none;
+            border-top: 2px solid white; /* Set the color and thickness of the line */
+            margin: 20px 0; /* Add space above and below the line */
+            width: 50%; /* Set the width of the divider */
+        }
     </style>
 </head>
 <body>
@@ -174,31 +181,33 @@
             };
         }
         </script>
-
+<hr>
+        
+<a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
+ 
     </div>
 
     <script>
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Set canvas size to window size
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Number of particles
+     
         const numParticles = 1000;
 
-        // Create particles
         const particles = [];
         for (let i = 0; i < numParticles; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
-            const speedX = Math.random() - 0.5; // Random speed between -0.5 and 0.5
+            const speedX = Math.random() - 0.5;
             const speedY = Math.random() - 0.5;
             particles.push({ x, y, speedX, speedY });
         }
 
-        // Draw particles
+ 
         function drawParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'white';
@@ -209,7 +218,7 @@
             });
         }
 
-        // Move particles
+        
         function moveParticles() {
             particles.forEach(particle => {
                 particle.x += particle.speedX;
@@ -223,7 +232,7 @@
             });
         }
 
-        // Animation loop
+       
         function animate() {
             drawParticles();
             moveParticles();
