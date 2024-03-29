@@ -120,13 +120,14 @@
             box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); 
         }
 
-          hr {
+
+         hr {
             border: none;
-            border-top: 2px solid white; /* Set the color and thickness of the line */
-            margin: 10px auto; /* Add space above and below the line, and center it horizontally */
-            width: 50%; /* Set the width of the divider */
-            height: 1px; /* Set the height of the divider */
-            border-radius: 5px; /* Add rounded corners to the divider */
+            border-top: 2px solid white; 
+            margin: 15px auto; 
+            width: 50%; 
+            height: 1px; 
+            border-radius: 5px; 
         }
     </style>
 </head>
@@ -144,32 +145,71 @@
     </div>
     <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">brunysixl. | Arcade</h1>
-      <button class="minecraft-button" onclick="window.location.href = '/math/slope';">Slope</button>
+        <h1 class="glow">brunysixl.</h1>
+        <button class="minecraft-button">Open About:Blank Tab</button>
+        <script>
+      var urlObj = new window.URL(window.location.href);
+        var url = window.location;
+        
+        if (url) {
+            var win;
+        
+            document.querySelector('button').onclick = function() {
+                if (win) {
+                    win.focus();
+                } else {
+                    win = window.open();
+                    win.document.body.style.margin = '0';
+                    win.document.body.style.height = '100vh';
+                    var iframe = win.document.createElement('iframe');
+                    iframe.style.border = 'none';
+                    iframe.style.width = '100%';
+                    iframe.style.height = '100%';
+                    iframe.style.margin = '0';
+                    iframe.src = url;
+                    win.document.body.appendChild(iframe);
+                    window.location.replace("https://ixl.com");
+        
+                    var interval = setInterval(function() {
+                        if (win.closed) {
+                            clearInterval(interval);
+                            win = undefined;
+        
+                        }
+                    }, 500);
+        
+        
+                }
+            };
+        }
+        </script>
+<hr>
+        
+<a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
+ 
     </div>
 
     <script>
         const canvas = document.getElementById('particleCanvas');
         const ctx = canvas.getContext('2d');
 
-        // Set canvas size to window size
+
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
 
-        // Number of particles
+     
         const numParticles = 1000;
 
-        // Create particles
         const particles = [];
         for (let i = 0; i < numParticles; i++) {
             const x = Math.random() * canvas.width;
             const y = Math.random() * canvas.height;
-            const speedX = Math.random() - 0.5; // Random speed between -0.5 and 0.5
+            const speedX = Math.random() - 0.5;
             const speedY = Math.random() - 0.5;
             particles.push({ x, y, speedX, speedY });
         }
 
-        // Draw particles
+ 
         function drawParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             ctx.fillStyle = 'white';
@@ -180,7 +220,7 @@
             });
         }
 
-        // Move particles
+        
         function moveParticles() {
             particles.forEach(particle => {
                 particle.x += particle.speedX;
@@ -194,7 +234,7 @@
             });
         }
 
-        // Animation loop
+       
         function animate() {
             drawParticles();
             moveParticles();
