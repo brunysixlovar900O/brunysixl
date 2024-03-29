@@ -4,7 +4,7 @@
     <style>
         body {
             margin: 0;
-            overflow: auto; 
+            overflow: auto; /* Enable scrolling */
             background-color: black;
             position: relative;
             font-family: Arial, sans-serif;
@@ -16,6 +16,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
+            background-color: black;
         }
 
         .footer-img {
@@ -26,21 +27,21 @@
         .footer-link {
             cursor: pointer;
             transition: transform 0.3s;
+            color: white;
+            margin-right: 10px; /* Add spacing between links */
         }
 
         .footer-link:hover {
             transform: scale(1.1);
         }
 
-        .particles {
+        canvas {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             z-index: -1;
-            pointer-events: none;
-            background-image: url('/imgs/brunysixlgif.gif'); 
         }
 
         .content {
@@ -68,27 +69,77 @@
 <body>
     <div class="footer">
         <img src="https://your-image-url.jpg" alt="40x40 Image" class="footer-img">
-        <h3 class="footer-link" onclick="window.location.href='/math.html'">Arcade</h3>
-        <h3 class="footer-link" onclick="window.location.href='/science.html'">Proxys</h3>
-        <h3 class="footer-link" onclick="window.location.href='/geometry.html'">Bookmarks</h3>
-        <h3 class="footer-link" onclick="window.location.href='/art.html'">Emulators</h3>
-        <h3 class="footer-link" onclick="window.location.href='/socialstudies.html'">More</h3>
+        <div>
+            <h3 class="footer-link" onclick="window.location.href='page1.html'">Link 1</h3>
+            <h3 class="footer-link" onclick="window.location.href='page2.html'">Link 2</h3>
+            <h3 class="footer-link" onclick="window.location.href='page3.html'">Link 3</h3>
+            <h3 class="footer-link" onclick="window.location.href='page4.html'">Link 4</h3>
+            <h3 class="footer-link" onclick="window.location.href='page5.html'">Link 5</h3>
+        </div>
     </div>
-    <div class="particles"></div>
+    <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">brunysixl</h1>
+        <h1 class="glow">brunysixl.</h1>
     </div>
 
     <script>
-        
-        document.querySelectorAll('.footer-link').forEach(link => {
-            link.addEventListener('click', (event) => {
-                // Prevent default behavior of the link
-                event.preventDefault();
-      
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
+
+        // Set canvas size to window size
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+
+        // Number of particles
+        const numParticles = 1000;
+
+        // Create particles
+        const particles = [];
+        for (let i = 0; i < numParticles; i++) {
+            const x = Math.random() * canvas.width;
+            const y = Math.random() * canvas.height;
+            particles.push({ x, y });
+        }
+
+        // Draw particles
+        function drawParticles() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.fillStyle = 'white';
+            particles.forEach(particle => {
+                ctx.beginPath();
+                ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
+                ctx.fill();
             });
-        });
+        }
+
+        // Connect particles
+        function connectParticles() {
+            ctx.strokeStyle = 'white';
+            particles.forEach(particle => {
+                particles.forEach(otherParticle => {
+                    if (particle !== otherParticle) {
+                        const dx = particle.x - otherParticle.x;
+                        const dy = particle.y - otherParticle.y;
+                        const distance = Math.sqrt(dx * dx + dy * dy);
+                        if (distance < 30) {
+                            ctx.beginPath();
+                            ctx.moveTo(particle.x, particle.y);
+                            ctx.lineTo(otherParticle.x, otherParticle.y);
+                            ctx.stroke();
+                        }
+                    }
+                });
+            });
+        }
+
+        // Animation loop
+        function animate() {
+            drawParticles();
+            connectParticles();
+            requestAnimationFrame(animate);
+        }
+
+        animate();
     </script>
 </body>
 </html>
-
