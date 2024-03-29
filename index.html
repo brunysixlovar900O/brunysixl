@@ -16,7 +16,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            background-color: rgba(0, 0, 0, 0.95); /* 85% transparent black */
+            background-color: rgba(0, 0, 0, 0.95); /* 95% transparent black */
         }
 
         .footer-img {
@@ -77,18 +77,18 @@
 </head>
 <body>
     <div class="footer">
-        <img src="/imgs/brunysixlgif.gif" alt="40x40 Image" class="footer-img">
+        <img src="https://your-image-url.jpg" alt="40x40 Image" class="footer-img">
         <div class="footer-links">
-            <h3 class="footer-link" onclick="window.location.href='/math.html'">Arcade</h3>
-            <h3 class="footer-link" onclick="window.location.href='/science.html'">Proxys</h3>
-            <h3 class="footer-link" onclick="window.location.href='/socialstudies.html'">Emulators</h3>
-            <h3 class="footer-link" onclick="window.location.href='/art.html'">Bookmarks</h3>
-            <h3 class="footer-link" onclick="window.location.href='/physics.html'">More</h3>
+            <h3 class="footer-link" onclick="window.location.href='page1.html'">Link 1</h3>
+            <h3 class="footer-link" onclick="window.location.href='page2.html'">Link 2</h3>
+            <h3 class="footer-link" onclick="window.location.href='page3.html'">Link 3</h3>
+            <h3 class="footer-link" onclick="window.location.href='page4.html'">Link 4</h3>
+            <h3 class="footer-link" onclick="window.location.href='page5.html'">Link 5</h3>
         </div>
     </div>
     <canvas id="particleCanvas"></canvas>
     <div class="content">
-        <h1 class="glow">brunysixl.</h1>
+        <h1 class="glow">Glowing Text</h1>
     </div>
 
     <script>
@@ -118,7 +118,7 @@
             ctx.fillStyle = 'white';
             particles.forEach(particle => {
                 ctx.beginPath();
-                ctx.arc(particle.x, particle.y, 1, 0, Math.PI * 2);
+                ctx.arc(particle.x, particle.y, 2, 0, Math.PI * 2); // Increase particle size to 2
                 ctx.fill();
             });
         }
