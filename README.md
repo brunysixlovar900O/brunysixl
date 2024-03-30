@@ -1,4 +1,4 @@
-# brunysixl-v3.5
+# brunysixl v3.5
 
 brunysixl V3.5
 
