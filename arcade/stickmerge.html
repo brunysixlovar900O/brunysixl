@@ -1,1 +1,180 @@
+<title>IXL | Activities</title>
+<link rel="icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+    }
+    #particles-js {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+    nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #0f0f0f;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 1;
+        opacity: 0.85;
+    }
+    .button {
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    .button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+    img.nav-img {
+        width: 40px;
+        height: 40px;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+    img.nav-img:hover {
+        transform: scale(1.2);
+    }
+    .glow {
+        font-size: 48px;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        animation: glow 1s infinite alternate;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        color: white;
+        text-align: center;
+    }
+    hr {
+            border: none;
+            border-top: 2px solid white; 
+            margin: 15px auto; 
+            width: 50%; 
+            height: 1px; 
+            border-radius: 5px; 
+        }
+    button {
+        padding: 10px 20px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+
+    .content {
+            text-align: center;
+            padding: 50px 0;
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 60vh;
+        }
+    
+  iframe {
+            width: 70%;
+            height: 500px;
+            border: #ffffff;
+        }
+</style>
+</head>
+<body>
+<div id="particles-js"></div>
+<nav>
+    <img class="nav-img" src="/imgs/brunysixlgiflogo.gif" alt="Image" onclick="window.location.href='/'" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
+    <div>
+        <a class="button" href="/arcade.html">Arcade</a>
+        <a class="button" href="/proxys.html">Proxys</a>
+        <a class="button" href="/emulators.html">Emulators</a>
+        <a class="button" href="/bookmarks.html">Bookmarks</a>
+        <a class="button" href="/apps.html">Apps</a>
+        <a class="button" href="/socials.html">Socials</a>
+    </div>
+</nav>
+<div class="content">
+        <iframe src="https://blup13.netlify.app/projects/stick-merge/game.html"></iframe>
+    </div>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {"value": 80},
+            "color": {"value": "#ffffff"},
+            "shape": {"type": "circle"},
+            "opacity": {"value": 0.5},
+            "size": {"value": 3},
+            "line_linked": {"color": "#ffffff", "opacity": 0.4, "width": 1},
+            "move": {"speed": 6, "direction": "top"}
+        },
+        "interactivity": {
+            "events": {"onhover": {"enable": true, "mode": "grab"}},
+            "modes": {"grab": {"distance": 140}}
+        }
+    });
+</script>
+</body>
+</html>
+
+
+ <link rel="icon" href="/imgs/brunysixlgif.gif">
+  <meta property="og:title" content="brunysixl. | Arcade Game.">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta property="og:image" content="/imgs/brunysixlgif.gif">
+  <meta name="description" content="brunysixl is ovar 9000!!!">
+  <meta property="og:description" content="brunysixl. Find Awesome Stuff Online.">
