@@ -114,6 +114,22 @@
     transform: scale(1.1);
     filter: invert(1);
 }
+
+    blank-button {
+        padding: 13px 23px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    blank-button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
 </style>
 </head>
 <body>
@@ -131,8 +147,8 @@
 </nav>
 <header>
     <h1 class="glow">brunysixl.</h1>
-    <h5>motd: uhhh -TwoMuchRed</h5>
-     <button class="cyan" onclick="openGame()">Open About:Blank Tab</button>
+    <h5>motd: Whats JS? -Javascript</h5>
+     <button class="blank-button" onclick="openGame()">Open About:Blank Tab</button>
         <script>
       var urlObj = new window.URL(window.location.href);
         var url = window.location;
