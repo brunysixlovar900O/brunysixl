@@ -114,6 +114,41 @@
     transform: scale(1.1);
     filter: invert(1);
 }
+
+    .image-container {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.1s;
+        cursor: pointer;
+    }
+    .image-container:hover {
+        transform: scale(1.1);
+    }
+    .image-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid white;
+        pointer-events: none;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+    }
+      iframe {
+        display: none;
+        width: 800px;
+        height: 500px;
+        border: 3px solid white;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
 </style>
 </head>
 <body>
@@ -132,33 +167,136 @@
 <header>
     <h1 class="glow">brunysixl. | Apps.</h1>
     <h5>Our Apps Selection:</h5>
-  <hr>
-        <button onclick="window.location.href='/apps/30dollarwebsite.html';">30 dollar website</button>
-	<button onclick="window.location.href='/apps/discord.html';">Discord</button>
-	<button onclick="window.location.href='/apps/doritos.html';">doritos</button>
-	<button onclick="window.location.href='/apps/streamium.html';">streamium</button>
-	<button onclick="window.location.href='/apps/turbowarp.html';">turbowarp</button>
-	<button onclick="window.location.href='/apps/turbowarp.html';">turbowarp packager</button>
-	<button onclick="window.location.href='/apps/turbowarp.html';">turbowarp unpackager</button>
-	<button onclick="window.location.href='/apps/weavesilk.html';">weavesilk</button>
-	<button onclick="window.location.href='/apps/webglfluid.html';">webgl fluid</button>
-	<button onclick="window.location.href='/apps/github.html';">github unblocked</button>
-	<button onclick="window.location.href='/apps/youtube.html';">youtube</button>
-	<button onclick="window.location.href='/apps/geforcenow.html';">geforce now</button>
-	<button onclick="window.location.href='/apps/google.html';">google</button>
-	<button onclick="window.location.href='/apps/tiktok.html';">tiktok</button>
-	<button onclick="window.location.href='/apps/spotify.html';">spotify</button>
-	<button onclick="window.location.href='/apps/soundcloud.html';">sound cloud</button>
-	<button onclick="window.location.href='/apps/chatgpt.html';">chatgpt</button>
-	<button onclick="window.location.href='/apps/mathway.html';">mathway</button>
-	<button onclick="window.location.href='/apps/snapchat.html';">snapchat</button>
-	<button onclick="window.location.href='/apps/soundboard.html';">soundboard</button>
-	<button onclick="window.location.href='/apps/twitch.html';">twitch</button>
-	<button onclick="window.location.href='/apps/crunchyroll.html';">crunchyroll</button>
-	<button onclick="window.location.href='/apps/instagram.html';">instagram</button>
-	<button onclick="window.location.href='/apps/facebook.html';">facebook</button>
-	<button onclick="window.location.href='/apps/twitter.html';">twitter</button>
-	
+     <hr>
+
+    
+
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/fluidsim/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/unnamed (9).png" alt="Clickable Image">
+    </div>  
+  
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/thirtydollarwebsite/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/images (24).jpeg" alt="Clickable Image">
+    </div>  
+
+   <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/turbowarp/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/67349469.png" alt="Clickable Image">
+    </div>  
+
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/weavesilk/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/lcu4rxqs8n.png" alt="Clickable Image">
+    </div>  
+    
+  <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://github.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (10).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://youtube.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (11).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://nvidia.com/en-us/geforce-now/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (12).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://google.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (13).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://tiktok.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (14).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://spotify.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (15).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://soundcloud.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (38).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://chat.openai.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (16).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://mathway.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (17).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://web.snapchat.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (18).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://twitch.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (39).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://crunchyroll.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (19).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://instagram.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (40).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://facebook.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (41).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://twitter.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (20).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://netflix.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/images (5).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://hulu.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (42).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://bing.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (43).jpeg" alt="Clickable Image">
+    </div>
+    
+
+    
+    
+
+    <iframe id="iframe" src="" frameborder="0"></iframe>
+
+    <script>
+        const imageContainers = document.querySelectorAll('.image-container');
+        const iframe = document.getElementById('iframe');
+
+        imageContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                iframe.src = url;
+                iframe.style.display = 'block';
+                iframe.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    
     <hr>
     <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
 </header>
