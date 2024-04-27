@@ -114,6 +114,41 @@
     transform: scale(1.1);
     filter: invert(1);
 }
+
+    .image-container {
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.1s;
+        cursor: pointer;
+    }
+    .image-container:hover {
+        transform: scale(1.1);
+    }
+    .image-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid white;
+        pointer-events: none;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+    }
+      iframe {
+        display: none;
+        width: 800px;
+        height: 500px;
+        border: 3px solid white;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
 </style>
 </head>
 <body>
@@ -130,29 +165,58 @@
     </div>
 </nav>
 <header>
-    <h1 class="glow">brunysixl. | Emulators.</h1>
-    <h5>Our Emulator Selection:</h5>
-  <hr>
-        <button onclick="window.location.href='/emulators/emulatorjs.html';">emulator.js</button>	
-  <button onclick="window.location.href='/emulators/galaxytab.html';">galaxy tab</button>
-  <button onclick="window.location.href='/emulators/ipad.html';">ipad</button>
-  <button onclick="window.location.href='/emulators/ipadair.html';">ipad air</button>
-  <button onclick="window.location.href='/emulators/ipadpro.html';">ipad pro</button>
-  <button onclick="window.location.href='/emulators/iphone11.html';">iphone 11</button>
-  <button onclick="window.location.href='/emulators/iphone12.html';">iphone 12</button>
-  <button onclick="window.location.href='/emulators/iphone13.html';">iphone 13</button>
-  <button onclick="window.location.href='/emulators/iphone14.html';">iphone 14</button>
-  <button onclick="window.location.href='/emulators/iphone15.html';">iphone 15</button>
-  <button onclick="window.location.href='/emulators/iphone8.html';">iphone 8</button>
-  <button onclick="window.location.href='/emulators/nexus5.html';">nexus 5</button>
-  <button onclick="window.location.href='/emulators/pixel4.html';">pixel 4</button>
-  <button onclick="window.location.href='/emulators/pixel6.html';">pixel 6</button>
-  <button onclick="window.location.href='/emulators/pixel7.html';">pixel 7</button>
-  <button onclick="window.location.href='/emulators/ruffle.html';">ruffle</button>
-    <button onclick="window.location.href='/emulators/ruffle2.html';">ruffle server 2</button>
-  <button onclick="window.location.href='/emulators/webretro.html';">web retro</button>
-  <button onclick="window.location.href='/emulators/windows11.html';">windows 11</button>
-    <button onclick="window.location.href='/emulators/szvy.html';">szvy central</button>
+    <h1 class="glow">brunysixl. | Apps.</h1>
+    <h5>Our Apps Selection:</h5>
+     <hr>
+
+    
+
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/ruffle/">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/ruffle-flash-player-emulator.avif" alt="Clickable Image">
+    </div>  
+
+    <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/windows11/">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (44).jpeg" alt="Clickable Image">
+    </div>  
+
+    <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/webretro/">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (21).png" alt="Clickable Image">
+    </div>  
+
+    <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/emulatorjs/">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/emulatorjs-logo.png" alt="Clickable Image">
+    </div>  
+
+    <div class="image-container" data-url="https://appetize.io/embed/8bnmakzrptf1hv9dq7v7bnteem?autoplay=false&debug=true&device=iphone15pro&deviceColor=white&embed=true&orientation=landscape&params=%7B"EXDevMenuDisableAutoLaunch":true,"EXKernelLaunchUrlDefaultsKey":"exp://exp.host/@snack/sdk.48.0.0-dRi52quhTT","EXKernelDisableNuxDefaultsKey":true%7D&scale=72&screenOnly=false&xDocMsg=true&xdocMsg=true">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (22).png" alt="Clickable Image">
+    </div>  
+
+    <div class="image-container" data-url="https://appetize.io/embed/dprul2v3lnp2p2okkylszo6tc4?appearance=light&centered=both&device=pixel7&deviceColor=black&launchUrl=exp://u.expo.dev/933fd9c0-1666-11e7-afca-d980795c5824?runtime-version%3Dexposdk%253A48.0.0%26channel-name%3Dproduction%26snack%3DfWdRX7Kw7%26snack-channel%3DZFbeKoK6f2&orientation=landscape&params=%7B"EXDevMenuDisableAutoLaunch":true,"EXKernelDisableNuxDefaultsKey">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (23).png" alt="Clickable Image">
+    </div>  
+  
+    
+
+    
+    
+
+    <iframe id="iframe" src="" frameborder="0"></iframe>
+
+    <script>
+        const imageContainers = document.querySelectorAll('.image-container');
+        const iframe = document.getElementById('iframe');
+
+        imageContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                iframe.src = url;
+                iframe.style.display = 'block';
+                iframe.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    
     <hr>
     <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
 </header>
