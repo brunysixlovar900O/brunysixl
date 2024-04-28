@@ -17,6 +17,6 @@ Thank You For Choosing Us :)
 
 -Bruny
 
- 
+  <img src="https://img.shields.io/github/repo-size/brunysixlovar900O/brunysixl?style=for-the-badge&labelColor=%23000000&color=%231c1c1c"><img src="https://img.shields.io/github/stars/brunysixlovar900O/brunysixl?style=for-the-badge&labelColor=%23000000&color=%231c1c1c"><img src="https://img.shields.io/github/forks/brunysixlovar900O/brunysixl?style=for-the-badge&labelColor=000000&color=1c1c1c">
 
 in brunysixl we trust.
