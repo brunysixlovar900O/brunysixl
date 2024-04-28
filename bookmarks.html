@@ -47,40 +47,42 @@
         height: 100%;
         z-index: -1;
     }
-    nav {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: #0f0f0f;
-        padding: 10px 20px;
-        position: relative;
-        z-index: 1;
-        opacity: 0.85;
-    }
-    .button {
-        padding: 10px 20px;
-        background-color: #000;
-        color: #fff;
-        border: 2px solid #fff;
-        text-decoration: none;
-        font-weight: bold;
-        border-radius: 5px;
-        margin-left: 10px;
-        transition: transform 0.3s, filter 0.3s;
-    }
-    .button:hover {
-    transform: scale(1.1);
-    filter: invert(1);
-}
-    img.nav-img {
-        width: 40px;
-        height: 40px;
-        cursor: pointer;
-        transition: transform 0.3s;
-    }
-    img.nav-img:hover {
-        transform: scale(1.2);
-    }
+     body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            padding-top: 20px;
+        }
+        nav {
+            background-color: #171616;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            color: white;
+            border-radius: 10px;
+            margin: 0 20px;
+            opacity: 0.85;
+        }
+        .nav-logo img {
+            width: 40px;
+            height: 40px;
+            margin-right: 10px;
+        }
+        .nav-buttons {
+            display: flex;
+            gap: 10px;
+        }
+        .nav-buttons a {
+            padding: 10px;
+            background-color: #1f1f1e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        .nav-buttons a:hover {
+            background-color: #333;
+        }
     .glow {
         font-size: 48px;
         color: white;
@@ -118,17 +120,21 @@
 </head>
 <body>
 <div id="particles-js"></div>
-<nav>
-    <img class="nav-img" src="/imgs/brunysixlgiflogo.gif" alt="Image" onclick="window.location.href='/'" onmouseover="this.style.transform='scale(1.2)'" onmouseout="this.style.transform='scale(1)'">
-    <div>
-        <a class="button" href="/arcade.html">Arcade</a>
-        <a class="button" href="/proxys.html">Proxys</a>
-        <a class="button" href="/emulators.html">Emulators</a>
-        <a class="button" href="/bookmarks.html">Bookmarks</a>
-        <a class="button" href="/apps.html">Apps</a>
-        <a class="button" href="/socials.html">Socials</a>
-    </div>
-</nav>
+ <nav>
+        <div class="nav-logo">
+            <a href="/">
+                <img src="/imgs/brunysixlgiflogo.gif" alt="brunysixl-Logo">
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a href="/arcade.html">Arcade</a>
+            <a href="/proxies.html">Proxies</a>
+            <a href="/emulators.html">Emulators</a>
+            <a href="/bookmarks.html">Bookmarks</a>
+            <a href="/apps.html">Apps</a>
+            <a href="/extra.html">Extra</a>
+        </div>
+    </nav>
 <header>
     <h1 class="glow">brunysixl. | Bookmarks.</h1>
     <h5>Our Bookmark Selection:</h5>
