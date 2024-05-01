@@ -91,14 +91,34 @@
         margin-top: 100px;
     }
     
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: black;
+        position: relative;
+    }
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
     footer {
         background-color: #121212;
         color: white;
         text-align: center;
         padding: 15px;
-        width: 100%;
+        width: 80%;
+        margin: 0 auto;
         position: fixed;
         bottom: 0;
+        left: 0;
+        right: 0;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
     }
     h2, h3, h4, h5, h6, p, header {
     color: white;
