@@ -1,0 +1,446 @@
+<title>IXL | Learning</title>
+<link rel="icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+     body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+     }
+    
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    nav {
+        background-color: #121212;
+        padding: 10px 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 80%;
+        max-width: 1000px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .buttons {
+        margin-left: auto;
+        display: flex;
+    }
+    .buttons a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #252626;
+        transition: background-color 0.3s ease;
+    }
+    .buttons a:hover {
+        background-color: #777;
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+    .glow {
+        font-size: 48px;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        animation: glow 1s infinite alternate;
+        margin-top: 100px;
+    }
+
+    footer {
+        background-color: #121212;
+        color: white;
+        text-align: center;
+        padding: 15px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    h2, h3, h4, h5, h6, p, header {
+    color: white;
+    text-align: center;
+    }
+    button {
+        padding: 13px 23px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+    hr {
+            border: none;
+            border-top: 2px solid white; 
+            margin: 15px auto; 
+            width: 50%; 
+            height: 1px; 
+            border-radius: 5px; 
+        }
+  .image-container {
+        border-radius: 5px;
+        display: inline-block;
+        width: 100px;
+        height: 100px;
+        overflow: hidden;
+        position: relative;
+        transition: transform 0.1s;
+        cursor: pointer;
+    }
+    .image-container:hover {
+        transform: scale(1.1);
+        filter: brightness(70%);
+    }
+    .image-container::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 3px solid white;
+        pointer-events: none;
+    }
+    .image-container img {
+        width: 100%;
+        height: 100%;
+    }
+      iframe {
+        display: none;
+        width: 800px;
+        height: 500px;
+        border: 3px solid white;
+        margin-top: 20px;
+        margin: 0 auto;
+    }
+</style>
+</head>
+<body>
+<nav>
+    <a href="/"><img src="/imgs/brunysixlgiflogo.gif" alt="Logo" class="logo"></a>
+    <div class="buttons">
+        <a href="/arcade.html">Arcade</a>
+        <a href="/proxy.html">Proxy</a>
+        <a href="/emulators.html">Emulators</a>
+        <a href="/apps.html">Apps</a>
+        <a href="/bookmarklets.html">Bookmarklets</a>
+        <a href="/extra.html">Extra</a>
+        
+    </div>
+</nav>
+<h1 class="glow">brunysixl</h1>
+<h5>Our Awesome App Selection :) :</h5>
+    <hr>
+
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/fluidsim/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/unnamed (9).png" alt="Clickable Image">
+    </div>  
+  
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/thirtydollarwebsite/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/images (24).jpeg" alt="Clickable Image">
+    </div>  
+
+   <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/turbowarp/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/67349469.png" alt="Clickable Image">
+    </div>  
+
+  <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/weavesilk/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/lcu4rxqs8n.png" alt="Clickable Image">
+    </div>  
+    
+  <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://github.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (10).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://youtube.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (11).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://nvidia.com/en-us/geforce-now/">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (12).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://google.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (13).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://tiktok.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (14).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://spotify.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (15).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://soundcloud.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (38).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://chat.openai.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (16).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://mathway.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (17).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://web.snapchat.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (18).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://twitch.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (39).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://crunchyroll.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (19).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://instagram.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (40).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://facebook.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (41).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://twitter.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (20).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://netflix.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/images (5).png" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://hulu.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (42).jpeg" alt="Clickable Image">
+    </div>
+
+  
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://bing.com">
+        <img src="https://sage-genie-fd8510.netlify.app/apps/download (43).jpeg" alt="Clickable Image">
+    </div>
+   
+    <iframe id="iframe" src="" frameborder="0"></iframe>
+
+    <script>
+        const imageContainers = document.querySelectorAll('.image-container');
+        const iframe = document.getElementById('iframe');
+
+        imageContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const url = this.getAttribute('data-url');
+                iframe.src = url;
+                iframe.style.display = 'block';
+                iframe.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <h5>
+        credits to
+        <a href="https://seraph.reveriestudios.online">seraph</a>
+        for the games
+      </h5>
+  
+<div id="particles-js"></div>
+<footer>
+    <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
+</footer>
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+</body>
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/@widgetbot/crate@3" async defer>
+  new Crate({
+    server: '1212536662043791450',
+    channel: '1212543243817058394'
+  })
+</script>
+
+<link rel="icon" href="/imgs/brunysixlgiflogo.gif">
+  <meta property="og:title" content="brunysixl. | Apps.">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta property="og:image" content="/imgs/brunysixlgiflogo.gif">
+  <meta name="description" content="brunysixl. find everything you wanna do at home at school.">
+  <meta property="og:description" content="brunysixl. find everything you wanna do at home at school.">
