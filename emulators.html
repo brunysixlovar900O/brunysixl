@@ -143,43 +143,66 @@
     transform: scale(1.1);
     filter: invert(1);
 }
-  .image-container {
-        border-radius: 5px;
-        display: inline-block;
-        width: 110px;
-        height: 110px;
-        overflow: hidden;
-        position: relative;
-        transition: transform 0.1s;
-        cursor: pointer;
-    }
-    .image-container:hover {
-        transform: scale(1.1);
-        filter: brightness(70%);
-    }
-    .image-container::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        border: 3px solid white;
-        pointer-events: none;
-    }
-    .image-container img {
-        width: 100%;
-        height: 100%;
-    }
-      iframe {
-        display: none;
-        width: 850px;
-        height: 500px;
-        border: 3px solid white;
-        margin-top: 20px;
-        margin: 0 auto;
-        border-radius: 5px;
-    }
+   #iframe-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
+        }
+        #iframe {
+            width: 80vw;
+            height: 70vh;
+            border: none;
+            z-index: 10000;
+        }
+        #close-button {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: 10px 210px;
+            background-color: #121212;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+            border: 2px solid white;
+            transition: filter 0.3s;
+        }
+        #close-button:hover {
+            filter: invert(1);
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            flex-wrap: wrap;
+        }
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.1s, filter 0.1s;
+            margin: 5px;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .image-container:hover {
+            transform: scale(1.1);
+        }
+        .image-container:hover img {
+            filter: brightness(70%);
+        }
 </style>
 </head>
 <body>
@@ -198,6 +221,12 @@
 <h5>Our Awesome Emulator Selection:</h5>
    <hr>
 
+<div id="iframe-container">
+        <iframe id="iframe"></iframe>
+        <a id="close-button">Close</a>
+    </div>
+    <div class="images-container">
+    
 <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/ruffle/">
         <img src="https://sage-genie-fd8510.netlify.app/emulators/ruffle-flash-player-emulator.avif" alt="Clickable Image">
     </div>  
@@ -224,19 +253,19 @@
     
     
 
-    <iframe id="iframe" src="" frameborder="0"></iframe>
-
+    </div>
     <script>
-        const imageContainers = document.querySelectorAll('.image-container');
-        const iframe = document.getElementById('iframe');
-
-        imageContainers.forEach(container => {
+        document.querySelectorAll('.image-container').forEach(function(container) {
             container.addEventListener('click', function() {
-                const url = this.getAttribute('data-url');
-                iframe.src = url;
-                iframe.style.display = 'block';
-                iframe.scrollIntoView({ behavior: 'smooth' });
+                var link = this.getAttribute('data-url');
+                document.getElementById('iframe').src = link;
+                document.getElementById('iframe-container').style.display = 'flex';
             });
+        });
+
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('iframe-container').style.display = 'none';
+            document.getElementById('iframe').src = '';
         });
     </script>
 
