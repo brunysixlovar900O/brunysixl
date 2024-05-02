@@ -143,22 +143,23 @@
     transform: scale(1.1);
     filter: invert(1);
 }
-  .image-container {
+        .image-container {
             display: inline-block;
             cursor: pointer;
+            margin: 10px; 
         }
         .image-container img {
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             border: 2px solid white;
-            transition: transform 0s, filter 0s;
+            transition: transform 0.1s;
         }
         .image-container:hover img {
             transform: scale(1.1);
-            filter: brightness(70%);
         }
 
-        #iframeContainer {
+        
+        #overlay {
             display: none;
             position: fixed;
             top: 0;
@@ -166,30 +167,39 @@
             width: 100%;
             height: 100%;
             background-color: rgba(0, 0, 0, 0.5);
-            z-index: 9999;
-            
+            z-index: 9998; 
         }
-        #iframeWrapper {
-            position: absolute;
+        
+        #iframeContainer {
+            display: none;
+            position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
+            z-index: 9999;
         }
         #iframeContainer iframe {
             width: 700px;
-            height: 400px;
+            height: 500px;
             border: none;
         }
+        
         #closeButton {
-            text-align: center;
+            display: none; 
             cursor: pointer;
             color: white;
             font-size: 20px;
             background-color: #121212;
-            border: 2px solid #fff;
             padding: 5px 10px;
             border-radius: 5px;
-            margin-top: 10px;
+            position: absolute;
+            bottom: -520px; 
+            left: 50%;
+            transform: translate(-50%, 20%);
+            z-index: 10000; 
+            width: 700px;
+            text-align: center;
+            
         }
 </style>
 </head>
@@ -653,42 +663,42 @@
         <img src="https://sage-genie-fd8510.netlify.app/Sport/IMG_4826.jpeg" alt="Clickable Image">
     </div>
     
+   <div id="overlay"></div>
     <div id="iframeContainer">
-        <div id="iframeWrapper">
-            <iframe id="iframeContent"></iframe>
-            <div id="closeButton">X</div>
-        </div>
+        <iframe id="iframeContent"></iframe>
     </div>
+
+    <div id="closeButton">X</div>
 
     <script>
         var imageContainers = document.querySelectorAll(".image-container");
+        var overlay = document.getElementById("overlay");
         var iframeContainer = document.getElementById("iframeContainer");
         var iframeContent = document.getElementById("iframeContent");
         var closeButton = document.getElementById("closeButton");
-        var closeDelay = 0; 
+        var closeDelay = 500;
 
         imageContainers.forEach(function(container) {
             container.addEventListener("click", function() {
                 var url = container.getAttribute("data-url");
                 iframeContent.setAttribute("src", url);
+                overlay.style.display = "block";
                 iframeContainer.style.display = "block";
+                closeButton.style.display = "block";
             });
         });
 
         closeButton.addEventListener("click", function() {
             setTimeout(function() {
+                overlay.style.display = "none";
                 iframeContainer.style.display = "none";
-                iframeContent.setAttribute("src", ""); 
+                closeButton.style.display = "none";
+                iframeContent.setAttribute("src", "");
             }, closeDelay);
         });
 
-        iframeContainer.addEventListener("click", function(event) {
-            if (event.target === iframeContainer) {
-                setTimeout(function() {
-                    iframeContainer.style.display = "none";
-                    iframeContent.setAttribute("src", ""); 
-                }, closeDelay);
-            }
+        overlay.addEventListener("click", function(event) {
+            event.stopPropagation();
         });
     </script>
   
