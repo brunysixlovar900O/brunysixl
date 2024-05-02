@@ -179,10 +179,12 @@
             align-items: center;
             position: absolute;
             z-index: 1000;
+            flex-wrap: wrap;
         }
         .image-container {
             cursor: pointer;
-            transition: transform 0.2s, filter 0.2s;
+            transition: transform 0.1s, filter 0.1s;
+            margin: 5px;
         }
         .image-container img {
             width: 100px;
@@ -217,7 +219,7 @@
 
 <div id="iframe-container">
         <iframe id="iframe"></iframe>
-        <button id="close-button">Close</button>
+        <a id="close-button">Close</a>
     </div>
     <div class="images-container">
 
