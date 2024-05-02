@@ -143,63 +143,59 @@
     transform: scale(1.1);
     filter: invert(1);
 }
-        .image-container {
-            display: inline-block;
-            cursor: pointer;
-            margin: 10px; 
-        }
-        .image-container img {
-            width: 50px;
-            height: 50px;
-            border: 2px solid white;
-            transition: transform 0.1s;
-        }
-        .image-container:hover img {
-            transform: scale(1.1);
-        }
-
-        
-        #overlay {
-            display: none;
-            position: fixed;
+        #iframe-container {
+            position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 9998; 
-        }
-        
-        #iframeContainer {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
             z-index: 9999;
+            background-color: rgba(0, 0, 0, 0.8);
+            display: none;
         }
-        #iframeContainer iframe {
-            width: 700px;
-            height: 500px;
+        #iframe {
+            width: 80vw;
+            height: 80vh;
             border: none;
+            z-index: 10000;
         }
-        
-        #closeButton {
-            display: none; 
-            cursor: pointer;
-            color: white;
-            font-size: 20px;
-            background-color: #121212;
-            padding: 5px 10px;
-            border-radius: 5px;
+        #close-button {
             position: absolute;
-            bottom: -520px; 
+            bottom: 20px;
             left: 50%;
-            transform: translate(-50%, 20%);
-            z-index: 10000; 
-            width: 700px;
-            text-align: center;
-            
+            transform: translateX(-50%);
+            padding: 10px 20px;
+            background-color: #121212;
+            color: #fff;
+            cursor: pointer;
+            z-index: 10001;
+        }
+        .images-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 1000;
+        }
+        .image-container {
+            cursor: pointer;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .image-container img {
+            width: 100px;
+            height: 100px;
+            border: 2px solid white;
+            border-radius: 10px;
+            transition: transform 0.2s, filter 0.2s;
+        }
+        .image-container:hover {
+            transform: scale(1.1);
+        }
+        .image-container:hover img {
+            filter: brightness(70%);
         }
 </style>
 </head>
@@ -219,7 +215,13 @@
 <h5>Our Awesome Arcade Selection:</h5>
    <hr>
 
-<div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://shuttle.lol/apps/roblox-corporation/5349/roblox.html">
+<div id="iframe-container">
+        <iframe id="iframe"></iframe>
+        <button id="close-button">Close</button>
+    </div>
+    <div class="images-container">
+
+    <div class="image-container" data-url="https://explo4er.basualdo.cl/embed?search=https://shuttle.lol/apps/roblox-corporation/5349/roblox.html">
         <img src="https://sage-genie-fd8510.netlify.app/extragames/unnamed (8).png" alt="Clickable Image">
     </div>
     
@@ -662,43 +664,20 @@
     <div class="image-container" data-url="https://brunysixlgames.netlify.app/games/basketbrosio/">
         <img src="https://sage-genie-fd8510.netlify.app/Sport/IMG_4826.jpeg" alt="Clickable Image">
     </div>
-    
-   <div id="overlay"></div>
-    <div id="iframeContainer">
-        <iframe id="iframeContent"></iframe>
+
     </div>
-
-    <div id="closeButton">X</div>
-
     <script>
-        var imageContainers = document.querySelectorAll(".image-container");
-        var overlay = document.getElementById("overlay");
-        var iframeContainer = document.getElementById("iframeContainer");
-        var iframeContent = document.getElementById("iframeContent");
-        var closeButton = document.getElementById("closeButton");
-        var closeDelay = 500;
-
-        imageContainers.forEach(function(container) {
-            container.addEventListener("click", function() {
-                var url = container.getAttribute("data-url");
-                iframeContent.setAttribute("src", url);
-                overlay.style.display = "block";
-                iframeContainer.style.display = "block";
-                closeButton.style.display = "block";
+        document.querySelectorAll('.image-container').forEach(function(container) {
+            container.addEventListener('click', function() {
+                var link = this.getAttribute('data-url');
+                document.getElementById('iframe').src = link;
+                document.getElementById('iframe-container').style.display = 'flex';
             });
         });
 
-        closeButton.addEventListener("click", function() {
-            setTimeout(function() {
-                overlay.style.display = "none";
-                iframeContainer.style.display = "none";
-                closeButton.style.display = "none";
-                iframeContent.setAttribute("src", "");
-            }, closeDelay);
-        });
-
-        overlay.addEventListener("click", function(event) {
-            event.stopPropagation();
+        document.getElementById('close-button').addEventListener('click', function() {
+            document.getElementById('iframe-container').style.display = 'none';
+            document.getElementById('iframe').src = '';
         });
     </script>
   
