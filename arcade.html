@@ -665,6 +665,7 @@
         var iframeContainer = document.getElementById("iframeContainer");
         var iframeContent = document.getElementById("iframeContent");
         var closeButton = document.getElementById("closeButton");
+        var closeDelay = 0; 
 
         imageContainers.forEach(function(container) {
             container.addEventListener("click", function() {
@@ -675,12 +676,18 @@
         });
 
         closeButton.addEventListener("click", function() {
-            iframeContainer.style.display = "none";
+            setTimeout(function() {
+                iframeContainer.style.display = "none";
+                iframeContent.setAttribute("src", ""); 
+            }, closeDelay);
         });
 
         iframeContainer.addEventListener("click", function(event) {
             if (event.target === iframeContainer) {
-                iframeContainer.style.display = "none";
+                setTimeout(function() {
+                    iframeContainer.style.display = "none";
+                    iframeContent.setAttribute("src", ""); 
+                }, closeDelay);
             }
         });
     </script>
