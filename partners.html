@@ -1,0 +1,361 @@
+<title>IXL | Dashboard</title>
+<link rel="icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
+<link rel="shortcut icon" href="/imgs/brunysixlfavicon.png" type="image/x-icon">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    body {
+        opacity: 0;
+        animation: fadeIn 0.5s ease forwards;
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+        }
+        to {
+            opacity: 1;
+        }
+    }
+
+</style>
+
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+   body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background-color: #000;
+        color: #fff;
+        text-align: center;
+        position: relative;
+        z-index: 0;
+     }
+    canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    nav {
+        background-color: #0d0d0d;
+        padding: 10px 20px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        width: 80%;
+        max-width: 1000px;
+        z-index: 1000;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    .buttons {
+        margin-left: auto;
+        display: flex;
+    }
+    .buttons a {
+        color: white;
+        text-decoration: none;
+        margin-left: 20px;
+        border-radius: 5px;
+        padding: 5px 10px;
+        background-color: #000;
+        transition: transform 0.3s, filter 0.3s;
+        border: 2px solid #fff;
+    }
+    .buttons a:hover {
+        transform: scale(1.1);
+        filter: invert(1);
+    }
+    .logo {
+        width: 40px;
+        height: 40px;
+        margin-right: 20px;
+    }
+    .glow {
+        font-size: 48px;
+        color: white;
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
+        animation: glow 1s infinite alternate;
+        margin-top: 100px;
+    }
+    
+    footer {
+        background-color: #333;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        width: 100%;
+        position: fixed;
+        bottom: 0;
+    }
+    h2, h3, h4, h5, h6, p, header {
+    color: white;
+    text-align: center;
+    }
+    button {
+        padding: 13px 23px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+    hr {
+            border: none;
+            border-top: 2px solid white; 
+            margin: 15px auto; 
+            width: 50%; 
+            height: 1px; 
+            border-radius: 5px; 
+        }
+
+    .blank-button {
+        padding: 13px 23px;
+        background-color: #000;
+        color: #fff;
+        border: 2px solid #fff;
+        text-decoration: none;
+        font-weight: bold;
+        border-radius: 5px;
+        margin-left: 10px;
+        transition: transform 0.3s, filter 0.3s;
+    }
+    .blank-button:hover {
+    transform: scale(1.1);
+    filter: invert(1);
+}
+  .partner {
+            border: 2px solid white;
+            transition: transform 0.1s, box-shadow 0.1s;
+            width: 100px;
+            height: 100px;
+        }
+        
+        .partner:hover {
+            box-shadow: 0 0 10px rgba(0,0,0,0.5);
+            transform: scale(1.1);
+        }
+</style>
+</head>
+<body>
+<nav>
+    <a href="/"><img src="/imgs/brunysixlgiflogo.gif" alt="Logo" class="logo"></a>
+    <div class="buttons">
+        <a href="/arcade.html">Arcade</a>
+        <a href="/emulators.html">Emulators</a>
+        <a href="/bookmarklets.html">Bookmarklets</a>
+        <a href="/proxy.html">Proxy</a>
+        <a href="/apps.html">Apps</a>
+        <a href="/extra.html">Extra</a>
+    </div>
+</nav>
+<h1 class="glow">brunysixl</h1>
+<h5>Our Awesome Sauce Partners:</h5>
+     <hr>
+   <a href="https://sites.google.com/view/60glasses">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/Screenshot 2024-03-02 123041.png" alt="60%glasses">
+    </a>
+
+    <a href="https://sites.google.com/view/game-hub-unbl0cked">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/8EC8166E-B6AD-46C0-9FE1-E5385CA6071D.jpeg" alt="GameHub">
+    </a>
+
+    <a href="https://sites.google.com/view/urisunblocked/home">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/IMG_1207.png" alt="Uris Unblocked Juegos">
+    </a>
+
+    <a href="https://sites.google.com/view/lludos">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/New Project (11) (1).png" alt="Ludos">
+    </a>
+
+    <a href="https://sites.google.com/view/pizzaedition">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/PizzaLogo.gif" alt="Pizza Edition">
+    </a>
+
+    <a href="https://sites.google.com/view/us2-v2">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/Untitled (6).png" alt="US2">
+    </a>
+
+    <a href="https://sites.google.com/view/odyssey-network/home">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/Untitled (7).png" alt="Odyssey Network">
+    </a>
+
+    <a href="https://sites.google.com/view/iandareaperr/home">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/downloadndjksankj (1).jpg" alt="Gorrila Unblocked">
+    </a>
+
+    <a href="https://szvycentral.pages.dev">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/logo (2).jpeg" alt="Szvy Central">
+    </a>
+
+    <a href="https://frogiesarcade.web.app">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/logo.gif" alt="Frogies Arcade V2">
+    </a>
+
+    <a href="https://sites.google.com/rcsd121.org/ggg/home">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/websitepfp (1).jpg" alt="Global Game Garage">
+    </a>
+
+    <a href="https://sites.google.com/view/dannybredlessons">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/johnny_automatic_loaf_of_bread (1).png" alt="DanyBredLessons">
+    </a>
+
+    <a href="https://rubyarcade.netlify.app">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/ruby (1).png" alt="Ruby Arcade">
+    </a>
+
+    <a href="https://sites.google.com/view/jimmysgamaingsite/home">
+        <img class="partner" src="https://sage-genie-fd8510.netlify.app/partners/Screenshot 2024-04-04 193024.png" alt="JG V4">
+    </a>
+
+    <hr>
+    <h3>to partner dm me through discord or fill out the form.</h3>
+	<button onclick="window.open('https://forms.gle/ssmNvCiHyU7XTeTh8');">Partner request Form</button>
+    
+    <hr>
+     <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
+    
+<div id="particles-js"></div>
+    
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+</body>
+</html>
+
+<link rel="icon" href="/imgs/brunysixlgiflogo.gif">
+  <meta property="og:title" content="brunysixl.">
+  <meta name="theme-color" content="#000000">
+  <meta name="msapplication-TileColor" content="#000000">
+  <meta property="og:image" content="/imgs/brunysixlgiflogo.gif">
+  <meta name="description" content="brunysixl. find everything you wanna do at home at school.">
+  <meta property="og:description" content="brunysixl. find everything you wanna do at home at school.">
