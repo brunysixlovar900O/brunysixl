@@ -221,55 +221,61 @@
 <h5>Our Awesome Emulator Selection:</h5>
    <hr>
 
-<div id="iframe-container">
-        <iframe id="iframe"></iframe>
-        <a id="close-button">Close</a>
-    </div>
-    <div class="images-container">
+<div id="game-loader"></div>
     
 <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/ruffle/">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/ruffle-flash-player-emulator.avif" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/ruffle-flash-player-emulator.avif" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
 
     <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/windows11/">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (44).jpeg" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (44).jpeg" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
 
     <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/webretro/">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (21).png" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (21).png" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
 
     <div class="image-container" data-url="https://brunysixlgames.netlify.app/apps/emulatorjs/">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/emulatorjs-logo.png" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/emulatorjs-logo.png" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
 
     <div class="image-container" data-url="https://appetize.io/embed/8bnmakzrptf1hv9dq7v7bnteem?autoplay=false&amp;debug=true&amp;device=iphone15pro&amp;deviceColor=white&amp;embed=true&amp;orientation=landscape&amp;params=%7B" exdevmenudisableautolaunch":true,"exkernellaunchurldefaultskey":"exp:="" exp.host="" @snack="" sdk.48.0.0-dri52quhtt","exkerneldisablenuxdefaultskey":true%7d&scale="72&amp;screenOnly=false&amp;xDocMsg=true&amp;xdocMsg=true&quot;">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (22).png" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (22).png" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
 
     <div class="image-container" data-url="https://appetize.io/embed/dprul2v3lnp2p2okkylszo6tc4?appearance=light&amp;centered=both&amp;device=pixel7&amp;deviceColor=black&amp;launchUrl=exp://u.expo.dev/933fd9c0-1666-11e7-afca-d980795c5824?runtime-version%3Dexposdk%253A48.0.0%26channel-name%3Dproduction%26snack%3DfWdRX7Kw7%26snack-channel%3DZFbeKoK6f2&amp;orientation=landscape&amp;params=%7B" exdevmenudisableautolaunch":true,"exkerneldisablenuxdefaultskey"="">
-        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (23).png" alt="Clickable Image">
+        <img src="https://sage-genie-fd8510.netlify.app/emulators/download (23).png" alt="Clickable Image"onclick="openIframe(this)">
     </div>  
-    
-    
 
+     <div id="iframe-overlay"></div>
+    <div id="iframe-container">
+        <iframe id="iframe"></iframe>
+        <div id="close-container">
+            <div id="close-button" onclick="closeIframe()">X</div>
+        </div>
     </div>
+    
     <script>
-        document.querySelectorAll('.image-container').forEach(function(container) {
-            container.addEventListener('click', function() {
-                var link = this.getAttribute('data-url');
-                document.getElementById('iframe').src = link;
-                document.getElementById('iframe-container').style.display = 'flex';
-            });
-        });
+        function loadGame() {
+            document.getElementById('game-loader').innerText = 'Loading game...';
+            setTimeout(() => {
+                document.getElementById('game-loader').innerText = 'Game loaded!';
+            }, 2000);
+        }
 
-        document.getElementById('close-button').addEventListener('click', function() {
+        function openIframe(element) {
+            var url = element.parentNode.getAttribute('data-url');
+            document.getElementById('iframe-overlay').style.display = 'block';
+            document.getElementById('iframe-container').style.display = 'block';
+            document.getElementById('iframe').src = url;
+        }
+
+        function closeIframe() {
+            document.getElementById('iframe-overlay').style.display = 'none';
             document.getElementById('iframe-container').style.display = 'none';
-            document.getElementById('iframe').src = '';
-        });
-    </script>
-
-   
+            document.getElementById('iframe').src = 'about:blank'; 
+        }
+    </script>   
   
     <hr>
      <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
