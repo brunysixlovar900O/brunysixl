@@ -163,14 +163,14 @@
             filter: brightness(80%);
         }
 
-        /* Styles for the iframe overlay and container */
+        
         #iframe-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100vw;
             height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            background-color: rgba(0, 0, 0, 0.5); 
             z-index: 9998;
             display: none;
         }
@@ -714,7 +714,7 @@
         function closeIframe() {
             document.getElementById('iframe-overlay').style.display = 'none';
             document.getElementById('iframe-container').style.display = 'none';
-            document.getElementById('iframe').src = 'about:blank'; // Clear the iframe content
+            document.getElementById('iframe').src = 'about:blank'; 
         }
     </script>
   
