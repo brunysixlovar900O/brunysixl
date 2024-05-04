@@ -143,6 +143,15 @@
     transform: scale(1.1);
     filter: invert(1);
 }
+    img {
+        width: 80px;
+        height: 30px;
+        transition: transform 0.3s
+    }
+
+    img:hover {
+        transform: scale(1.1);
+    }
 </style>
 </head>
 <body>
@@ -158,44 +167,9 @@
     </div>
 </nav>
 <h1 class="glow">brunysixl</h1>
-<h5>MOTD: i edge alot guys :trust: -frogiee1</h5>
-    <button class="blank-button" onclick="openGame()">Open About:Blank Version</button>
-        <script>
-      var urlObj = new window.URL(window.location.href);
-        var url = window.location;
-        
-        if (url) {
-            var win;
-        
-            document.querySelector('button').onclick = function() {
-                if (win) {
-                    win.focus();
-                } else {
-                    win = window.open();
-                    win.document.body.style.margin = '0';
-                    win.document.body.style.height = '100vh';
-                    var iframe = win.document.createElement('iframe');
-                    iframe.style.border = 'none';
-                    iframe.style.width = '100%';
-                    iframe.style.height = '100%';
-                    iframe.style.margin = '0';
-                    iframe.src = url;
-                    win.document.body.appendChild(iframe);
-                    window.location.replace("https://ixl.com");
-        
-                    var interval = setInterval(function() {
-                        if (win.closed) {
-                            clearInterval(interval);
-                            win = undefined;
-        
-                        }
-                    }, 500);
-        
-        
-                }
-            };
-        }
-        </script>
+<h5>MOTD:</h5>
+    <img src="83.png" alt="this is real chat">
+    
     <hr>
      <a href="https://www.freecounterstat.com" title="web counter"><img src="https://counter7.optistats.ovh/private/freecounterstat.php?c=cx88tzmqauk43lts3flwb7zql1tqg946" border="0" title="web counter" alt="web counter"></a>
 
