@@ -16,5 +16,6 @@ Welcome to my repository of unblocked games! This collection is dedicated to pro
 
 Feel free to explore and have fun gaming!
 
--bruny
+## -bruny
+in brunysixl we trust
 
