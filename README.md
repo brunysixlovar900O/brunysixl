@@ -10,7 +10,7 @@ Welcome to my repository of unblocked games! This collection is dedicated to pro
 ## BEST FEATURES!
 
 - Our Awesome Proxy!
-- 100+ Games
+- 130+ Games
 - Awesome Design
 - Its Free!
 
